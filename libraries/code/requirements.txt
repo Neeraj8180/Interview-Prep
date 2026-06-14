@@ -1,0 +1,49 @@
+# libraries/code — Requirements
+
+# ============================================================
+# Phase 1 — Data Foundations (Parts 1–5)
+# ============================================================
+numpy>=2.0,<3.0          # Part 2 — N-dimensional arrays
+pandas>=2.2,<3.0         # Part 3 — DataFrames with Copy-on-Write default
+polars>=0.20,<1.0        # Part 4 — Lazy DataFrame engine
+pyarrow>=16.0,<17.0      # Part 5 — Columnar memory and Parquet I/O
+
+# ============================================================
+# Phase 2 — Classical ML (Part 6)
+# ============================================================
+scikit-learn>=1.7,<2.0   # Part 6 — Pipelines, estimators, model selection
+scipy>=1.13,<2.0         # Underlying solvers for sklearn
+joblib>=1.4,<2.0         # Parallel processing used by sklearn
+
+# ============================================================
+# Phase 3 — Deep Learning (Parts 7–9)
+# ============================================================
+# Install PyTorch separately with the correct CUDA version from https://pytorch.org
+# Example for CUDA 12.1:
+#   pip install torch==2.6.0+cu121 -f https://download.pytorch.org/whl/torch_stable.html
+torch>=2.6,<3.0          # Part 7 — Autograd + neural networks
+jax[cpu]>=0.4.30,<1.0   # Part 8 — Functional transformations (use jax[cuda12] for GPU)
+tensorflow>=2.16,<3.0    # Part 9 — Keras 3 multi-backend
+keras>=3.0,<4.0          # Part 9 — Keras 3 API (multi-backend)
+
+# ============================================================
+# Phase 4 — LLM Engineering (Parts 10–13)
+# ============================================================
+transformers>=4.52,<5.0  # Part 10 — Hugging Face model hub
+datasets>=2.20,<3.0      # Part 10 — Dataset loading and processing
+tokenizers>=0.19,<1.0    # Part 10 — Fast tokenization
+peft>=0.16,<1.0          # Part 11 — Parameter-efficient fine-tuning (LoRA etc.)
+trl>=0.12,<1.0           # Part 12 — SFT, DPO, RLHF trainers
+accelerate>=0.32,<1.0    # Part 13 — Distributed training abstraction
+bitsandbytes>=0.43,<1.0  # Part 11 — 4-bit/8-bit quantization (QLoRA)
+
+# ============================================================
+# Utilities (used across multiple parts)
+# ============================================================
+matplotlib>=3.9,<4.0     # Plotting for visualizations
+seaborn>=0.13,<1.0       # Statistical visualization
+tqdm>=4.66,<5.0          # Progress bars
+rich>=13.7,<14.0         # Beautiful terminal output
+ipython>=8.0,<9.0        # Interactive Python shell
+jupyter>=1.0,<2.0        # Notebook support
+pytest>=8.0,<9.0         # Running test examples
